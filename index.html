@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11191b">
+<title>M&B Business Solutions | Mining & Industrial Supply</title>
+<style>
+:root{
+--bg:#101719;--panel:#202b2e;
+--copper:#c16e50;--text:#f5f1eb;
+--muted:#bac4c3;--line:#ffffff22
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Arial,sans-serif}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+header{
+position:sticky;top:0;z-index:20;
+display:flex;justify-content:space-between;
+align-items:center;gap:20px;padding:16px 6%;
+background:#101719f5;border-bottom:1px solid var(--line)
+}
+.brand{font-weight:900;font-size:20px;letter-spacing:1px}
+.brand span,.accent{color:var(--copper)}
+nav{display:flex;gap:19px;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:13px}
+nav a:hover{color:var(--copper)}
+section{padding:85px 7%;scroll-margin-top:90px}
+.eyebrow{font-size:12px;letter-spacing:3px;color:#e4a187;font-weight:bold}
+h1{font-size:clamp(44px,7vw,90px);line-height:1.06;letter-spacing:-2px;margin:22px 0}
+h2{font-size:clamp(30px,4vw,51px);line-height:1.12;margin:14px 0 25px}
+h3{margin:0 0 10px}
+p{color:var(--muted);max-width:720px}
+.hero{
+min-height:82vh;display:flex;flex-direction:column;
+justify-content:center;position:relative;overflow:hidden;
+background:radial-gradient(ellipse at 80% 65%,#a45a3640,transparent 55%),linear-gradient(120deg,#263337,#101719)
+}
+.hero>*{position:relative;z-index:1}
+.hero p{font-size:18px}
+.btn{
+display:inline-block;padding:13px 23px;
+background:var(--copper);border:0;border-radius:5px;
+color:white;text-decoration:none;font-weight:bold
+}
+.btn:hover{background:#d88768}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{
+padding:27px;border:1px solid var(--line);
+background:var(--panel);border-radius:9px
+}
+.card h3{color:#e8a88e}
+.card:hover{border-color:#c16e5080}
+.scene{
+height:350px;position:relative;overflow:hidden;
+background:linear-gradient(#2a3a3d,#141e20);
+border:1px solid #ffffff30;border-radius:12px;margin:30px 0
+}
+.ground{position:absolute;bottom:0;width:100%;height:45px;background:#344043}
+.silo{
+position:absolute;bottom:65px;left:52%;
+transform:translateX(-50%);width:155px;height:205px;
+background:linear-gradient(90deg,#465458,#aeb9b7 50%,#4a575a);
+border:3px solid #889593;border-radius:48px 48px 7px 7px;
+box-shadow:15px 12px 25px #0006
+}
+.silo:after{
+content:"";position:absolute;bottom:-45px;left:17px;
+width:115px;height:45px;background:#4b595b;
+clip-path:polygon(0 0,100% 0,75% 100%,25% 100%)
+}
+.pipe{
+position:absolute;left:7%;top:110px;width:45%;
+height:17px;background:linear-gradient(#b0b9b7,#647477);
+border-radius:8px
+}
+.filter{
+position:absolute;left:7%;top:75px;width:105px;height:120px;
+border:3px solid #81908f;background:linear-gradient(90deg,#455357,#899594,#455357);
+border-radius:8px
+}
+.filter:after{
+content:"FILTER";position:absolute;bottom:10px;left:19px;
+font-size:11px;letter-spacing:2px;color:white
+}
+.dust{
+position:absolute;width:5px;height:5px;
+border-radius:50%;background:#e5d7bd;
+animation:moveDust 4s linear infinite
+}
+@keyframes moveDust{
+0%{transform:translateX(-25px);opacity:0}
+25%{opacity:1}
+100%{transform:translateX(450px);opacity:0}
+}
+.stages{display:flex;gap:10px;flex-wrap:wrap}
+.stages button{
+background:#283639;border:1px solid #697574;
+color:white;padding:11px 15px;border-radius:5px
+}
+.stages button.active{background:var(--copper);border-color:var(--copper)}
+#stageInfo{min-height:65px}
+.team{
+display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px
+}
+.member{
+padding:0;background:var(--panel);border:1px solid var(--line);
+border-radius:10px;color:white;text-align:left;overflow:hidden;
+transition:transform .2s,border-color .2s
+}
+.member:hover{transform:translateY(-5px);border-color:var(--copper)}
+.avatar{
+height:150px;background:#354144;
+display:flex;align-items:center;justify-content:center;
+font-size:46px;color:#e5a48a
+}
+.member-info{padding:22px}
+.member-info small{color:#e3a48b}
+.member-info h3{margin:7px 0 3px;color:white}
+.member-info p{margin:0;font-size:13px}
+.profile{
+background:#263437;border:1px solid var(--copper);
+border-radius:10px;padding:25px;margin-top:20px
+}
+.profile[hidden]{display:none}
+.client{text-align:center;font-weight:900;font-size:23px;letter-spacing:1px}
+.navigator{position:fixed;bottom:22px;right:22px;z-index:50}
+#navPanel{
+display:none;position:absolute;bottom:72px;right:0;
+width:min(355px,90vw);padding:23px;
+background:#1b2729;border:1px solid var(--copper);
+border-radius:12px;box-shadow:0 20px 50px #000b
+}
+#navPanel.open{display:block}
+.radar{
+height:105px;width:105px;margin:15px auto;
+border:1px solid #c16e5066;border-radius:50%;
+background:repeating-radial-gradient(circle,transparent 0 21px,#c16e5033 22px 23px);
+position:relative;overflow:hidden
+}
+.radar:after{
+content:"";position:absolute;inset:0;
+background:conic-gradient(from 0deg,#c16e5088,transparent 85deg,transparent 360deg);
+animation:scan 4s linear infinite
+}
+@keyframes scan{to{transform:rotate(360deg)}}
+.navlinks{display:grid;gap:8px}
+.navlinks a{
+background:#2c3a3d;padding:11px;
+border-radius:5px;text-decoration:none
+}
+.navlinks a:hover{background:#46575a}
+footer{padding:35px 7%;background:#0a1011;border-top:1px solid var(--line)}
+@media(max-width:900px){
+header{flex-direction:column}
+nav{justify-content:center}
+.grid,.team{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:580px){
+section{padding:65px 6%}
+.grid,.team{grid-template-columns:1fr}
+nav{gap:11px}
+nav a{font-size:12px}
+.brand{font-size:17px}
+.pipe{width:40%}
+}
+@media(prefers-reduced-motion:reduce){
+*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="brand">M<span>&</span>B BUSINESS SOLUTIONS</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#flyash">Fly Ash</a>
+<a href="#clients">Clients</a>
+<a href="#team">Our Team</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="eyebrow">MINING & INDUSTRIAL SOLUTIONS</div>
+<h1>RELIABLE SUPPLY.<br><span class="accent">STRONGER MINING.</span></h1>
+<p>Supporting mining and industrial operations through fly ash supply, coordinated services and dependable business relationships.</p>
+<div><a class="btn" href="#services">Explore Our Services</a></div>
+</section>
+
+<section id="about">
+<div class="eyebrow">ABOUT M&B</div>
+<h2>Built for industrial demands.</h2>
+<p>M&B Business Solutions supports mining and industrial operations with material supply services and professional coordination.</p>
+</section>
+
+<section id="services">
+<div class="eyebrow">OUR CAPABILITIES</div>
+<h2>What We Do</h2>
+<div class="grid">
+<div class="card"><h3>Fly Ash Supply</h3><p>Fly ash supply solutions for suitable mining and industrial applications.</p></div>
+<div class="card"><h3>Mining Solutions</h3><p>Supporting mining operations through industrial material supply services.</p></div>
+<div class="card"><h3>Logistics Coordination</h3><p>Coordinating material deliveries through transport service providers.</p></div>
+</div>
+</section>
+
+<section id="flyash">
+<div class="eyebrow">INDUSTRIAL EXPLORER</div>
+<h2>The Journey of Fly Ash</h2>
+<p>Discover how fly ash is generated, captured and used in industry. This visualisation explains a general industrial process, not M&B's private operations.</p>
+<div class="scene" aria-label="Animated industrial fly ash filtration and storage illustration">
+<div class="ground"></div>
+<div class="filter"></div>
+<div class="pipe"></div>
+<div class="silo"></div>
+<div id="particles"></div>
+</div>
+<div class="stages" id="stages"></div>
+<p id="stageInfo" aria-live="polite"></p>
+</section>
+
+<section id="clients">
+<div class="eyebrow">OUR CLIENTS</div>
+<h2>Industry Relationships</h2>
+<div class="grid">
+<div class="card client">ROSOND</div>
+<div class="card client">VALTERRA</div>
+<div class="card client">AFRIMAT</div>
+</div>
+</section>
+
+<section id="team">
+<div class="eyebrow">THE PEOPLE BEHIND M&B</div>
+<h2>Leadership & Operations Team</h2>
+<p>Meet the team supporting M&B Business Solutions. Select a profile to view more information.</p>
+<div class="team" id="teamGrid"></div>
+<div class="profile" id="profile" hidden aria-live="polite">
+<h3 id="profileName"></h3>
+<p id="profileRole"></p>
+<p id="profileBio"></p>
+<button class="btn" id="closeProfile">Close Profile</button>
+</div>
+</section>
+
+<section id="contact">
+<div class="eyebrow">GET IN TOUCH</div>
+<h2>Let's discuss your requirements.</h2>
+<p>For mining supply enquiries and quotations, contact M&B Business Solutions.</p>
+<p>Official contact details will be added after management approval.</p>
+</section>
+</main>
+
+<footer>
+<strong>M&B BUSINESS SOLUTIONS</strong>
+<p>Concept preview for management review. Not an official public launch.</p>
+</footer>
+
+<div class="navigator">
+<div id="navPanel" aria-label="Mining Navigator">
+<div class="eyebrow">M&B OPERATIONS CONSOLE</div>
+<h3>Mining Navigator</h3>
+<div class="radar" aria-hidden="true"></div>
+<p>Where would you like to explore?</p>
+<div class="navlinks">
+<a href="#about">Company Overview</a>
+<a href="#services">Our Services</a>
+<a href="#flyash">Fly Ash Explorer</a>
+<a href="#clients">Industry Clients</a>
+<a href="#team">Leadership Team</a>
+<a href="#contact">Contact M&B</a>
+</div>
+</div>
+<button class="btn" id="navToggle" aria-expanded="false" aria-controls="navPanel">⚙ Mining Navigator</button>
+</div>
+
+<script>
+const stages=[
+["Generation","Fly ash forms during coal combustion in power stations."],
+["Capture","Fine particles are separated from flue gases by collection equipment."],
+["Storage","Collected fly ash can be transferred into enclosed storage silos."],
+["Quality","Material properties are assessed for their intended industrial application."],
+["Application","Suitable fly ash can support approved mining and construction applications."]
+];
+const stageBox=document.getElementById("stages");
+const stageInfo=document.getElementById("stageInfo");
+stages.forEach((stage,i)=>{
+const b=document.createElement("button");
+b.textContent=(i+1)+" · "+stage[0];
+b.onclick=()=>{
+document.querySelectorAll(".stages button").forEach(x=>x.classList.remove("active"));
+b.classList.add("active");
+stageInfo.textContent=stage[1];
+};
+stageBox.appendChild(b);
+});
+stageBox.firstElementChild.click();
+
+const particles=document.getElementById("particles");
+for(let i=0;i<35;i++){
+const p=document.createElement("span");
+p.className="dust";
+p.style.left=(8+Math.random()*30)+"%";
+p.style.top=(100+Math.random()*30)+"px";
+p.style.animationDelay=(-Math.random()*5)+"s";
+p.style.animationDuration=(2+Math.random()*4)+"s";
+particles.appendChild(p);
+}
+
+const team=[
+{name:"Merafe Tisane",role:"Managing Director",bio:"Managing Director"},
+{name:"Thulane Kota",role:"Technical Director",bio:"Professional biography to be added."},
+{name:"Thabang Selamolela",role:"Second Managing Director",bio:"Professional biography to be added."},
+{name:"Buang Tisane",role:"Logistics Coordinator",bio:"Professional biography to be added."},
+{name:"Thando Mtshali",role:"Project Coordinator",bio:"Professional biography to be added."}
+];
+const grid=document.getElementById("teamGrid");
+const profile=document.getElementById("profile");
+team.forEach((person,i)=>{
+const card=document.createElement("button");
+card.className="member";
+const avatar=document.createElement("div");
+avatar.className="avatar";
+avatar.textContent="◉";
+const info=document.createElement("div");
+info.className="member-info";
+const number=document.createElement("small");
+number.textContent="TEAM PROFILE 0"+(i+1);
+const name=document.createElement("h3");
+name.textContent=person.name;
+const role=document.createElement("p");
+role.textContent=person.role;
+const hint=document.createElement("small");
+hint.textContent="View Profile →";
+info.append(number,name,role,hint);
+card.append(avatar,info);
+card.onclick=()=>{
+document.getElementById("profileName").textContent=person.name;
+document.getElementById("profileRole").textContent=person.role;
+document.getElementById("profileBio").textContent=person.bio;
+profile.hidden=false;
+profile.scrollIntoView({behavior:"smooth",block:"nearest"});
+};
+grid.appendChild(card);
+});
+document.getElementById("closeProfile").onclick=()=>profile.hidden=true;
+
+const toggle=document.getElementById("navToggle");
+const panel=document.getElementById("navPanel");
+toggle.onclick=()=>{
+const open=panel.classList.toggle("open");
+toggle.setAttribute("aria-expanded",String(open));
+};
+document.querySelectorAll(".navlinks a").forEach(a=>{
+a.onclick=()=>{
+panel.classList.remove("open");
+toggle.setAttribute("aria-expanded","false");
+};
+});
+</script>
+</body>
+</html>
