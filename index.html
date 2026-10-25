@@ -3,385 +3,701 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>M&B Business Solutions | Mining & Industrial Supply</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="M&B Business Solutions - Mining and industrial material supply solutions.">
+<title>M&B Business Solutions | Mining & Industrial Solutions</title>
 <style>
 :root{
---bg:#11191b;--panel:#202d30;--copper:#c77c5c;
---light:#f6f3ee;--muted:#b8c4c5;--line:#ffffff24
+  --white:#ffffff;
+  --cream:#faf8f5;
+  --light:#f0f3f2;
+  --steel:#617579;
+  --dark:#223237;
+  --copper:#b95435;
+  --copper-light:#e9b29a;
+  --text:#344247;
+  --muted:#647579;
+  --border:#dce3e2;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--light);font:16px/1.6 Arial,sans-serif}
-a{color:inherit;text-decoration:none}
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--text);
+  font:16px/1.65 Arial,Helvetica,sans-serif;
+}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
-header{position:sticky;top:0;z-index:30;background:#11191bf5;border-bottom:1px solid var(--line);padding:10px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{height:75px;max-width:190px;object-fit:contain}
-nav{display:flex;gap:18px;flex-wrap:wrap}
-nav a{font-size:13px}
-nav a:hover{color:var(--copper)}
-section{padding:90px 7%;scroll-margin-top:100px}
-.wrap{max-width:1180px;margin:auto}
-.eyebrow{font-size:11px;letter-spacing:3px;color:#e3a186;font-weight:bold}
-h1{font-size:clamp(42px,7vw,88px);line-height:1.06;letter-spacing:-2px;margin:20px 0}
-h2{font-size:clamp(30px,4vw,50px);line-height:1.15}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+h1,h2,h3{color:var(--dark);line-height:1.15}
+h1{font-size:clamp(43px,6.5vw,84px);letter-spacing:-2.5px;margin:18px 0}
+h2{font-size:clamp(30px,4vw,50px);letter-spacing:-1.2px;margin:12px 0 22px}
+h3{font-size:21px}
 p{color:var(--muted)}
-.btn{display:inline-block;background:var(--copper);border:1px solid var(--copper);border-radius:5px;padding:12px 20px;color:#fff;font-weight:bold}
-.btn:hover{background:#e09674}
-.outline{background:transparent}
-.hero{min-height:80vh;display:flex;align-items:center;background:linear-gradient(100deg,#142023,#24373b 65%,#392c27)}
-.hero h1 span{color:#e4a083}
-.hero p{font-size:19px;max-width:620px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.alt{background:#192426}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.card{background:var(--panel);border:1px solid var(--line);padding:26px;border-radius:9px}
-.card h3{color:#e7a489}
-.card:hover{border-color:var(--copper)}
-.process{display:grid;grid-template-columns:1.4fr 1fr;gap:25px}
-.diagram{background:#202d30;border:1px solid #657779;border-radius:10px;padding:20px;min-height:400px}
-.diagram svg{width:100%;height:auto;display:block}
-.diagram .unit{fill:#71878b;stroke:#c1cdcc;stroke-width:3}
-.diagram .pipe{fill:none;stroke:#a3b7b8;stroke-width:16;stroke-linecap:round;stroke-linejoin:round}
-.diagram .inner{fill:none;stroke:#31494d;stroke-width:5}
-.diagram text{font:13px Arial,sans-serif;fill:#f7f3eb}
-.diagram .highlight{stroke:#efab80!important;stroke-width:5!important;filter:drop-shadow(0 0 7px #d58a60)}
-.diagram .flow{fill:none;stroke:#e6ae84;stroke-width:4;stroke-dasharray:8 14;animation:flow 2s linear infinite}
-@keyframes flow{to{stroke-dashoffset:-44}}
-.stages{display:grid;gap:9px}
-.stages button{text-align:left;background:#263538;border:1px solid var(--line);border-radius:6px;color:white;padding:14px}
-.stages button.active{background:#4a3932;border-color:var(--copper)}
-.detail{margin-top:15px;background:#263538;border-left:3px solid var(--copper);padding:20px;min-height:130px}
-.client{text-align:center;font-size:22px;font-weight:bold}
-.team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.person{background:var(--panel);border:1px solid var(--line);border-radius:9px;overflow:hidden;color:white;text-align:left;padding:0}
-.person:hover{border-color:var(--copper)}
-.initials{height:125px;display:grid;place-items:center;background:#344549;color:#edac8e;font-size:35px;font-weight:bold}
-.person-info{padding:20px}
-.person-info h3{margin:5px 0}
-.person-info p{margin:0 0 10px;font-size:13px}
-.person-info small{color:#e7a489}
-.profile{padding:24px;margin-top:18px;background:#263538;border:1px solid var(--copper);border-radius:8px}
-.profile[hidden]{display:none}
-.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:35px}
-form{background:var(--panel);padding:26px;border:1px solid var(--line);border-radius:9px}
-.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.field{margin-bottom:14px}
-label{display:block;font-size:13px;margin-bottom:6px}
-input,select,textarea{width:100%;padding:12px;border:1px solid #738487;border-radius:5px;background:#111b1d;color:white}
-textarea{min-height:120px;resize:vertical}
-.status{font-size:13px;color:#edb399}
-.navigator{position:fixed;right:20px;bottom:20px;z-index:50}
-.console{display:none;position:absolute;right:0;bottom:70px;width:min(350px,90vw);padding:23px;border:1px solid var(--copper);border-radius:10px;background:#19282b;box-shadow:0 20px 50px #000b}
-.console.open{display:block}
-.console-links{display:grid;gap:8px}
-.console-links a{padding:11px;background:#304145;border-radius:5px;font-size:13px}
-.console-links a:hover{background:#4b5e61}
-.radar{width:110px;height:110px;border-radius:50%;border:1px solid var(--copper);margin:18px auto;background:repeating-radial-gradient(circle,transparent 0 20px,#c77c5c40 21px 22px);position:relative;overflow:hidden}
-.radar:after{content:"";position:absolute;inset:0;background:conic-gradient(#c77c5c88,transparent 80deg,transparent 360deg);animation:scan 5s linear infinite}
-@keyframes scan{to{transform:rotate(360deg)}}
-footer{padding:35px 7%;background:#0b1112;border-top:1px solid var(--line)}
-@media(max-width:850px){
-header{flex-direction:column}
-nav{justify-content:center}
-.process,.contact{grid-template-columns:1fr}
-.grid,.team{grid-template-columns:repeat(2,1fr)}
+section{padding:85px 7%;scroll-margin-top:110px}
+.wrap{max-width:1200px;margin:auto}
+.eyebrow{
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:3px;
+  color:var(--copper);
 }
-@media(max-width:550px){
-section{padding:65px 6%}
-.grid,.team,.fields{grid-template-columns:1fr}
-.logo{height:60px}
-nav{gap:11px}
-nav a{font-size:12px}
+.btn{
+  display:inline-block;
+  border:1px solid var(--copper);
+  border-radius:5px;
+  padding:13px 22px;
+  color:white;
+  background:var(--copper);
+  font-weight:bold;
+  transition:.2s;
+}
+.btn:hover{background:#983f26}
+.btn-outline{background:white;color:var(--copper)}
+.btn-outline:hover{background:#fff2eb}
+header{
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:#fffffffa;
+  border-bottom:1px solid var(--border);
+  padding:8px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  box-shadow:0 4px 20px #24323809;
+}
+.logo{width:170px;height:92px;object-fit:contain}
+nav{display:flex;flex-wrap:wrap;gap:21px;align-items:center}
+nav a{font-size:13px;font-weight:bold;color:var(--dark)}
+nav a:hover{color:var(--copper)}
+.hero{
+  background:
+    radial-gradient(ellipse at 87% 50%,#e6b59b65,transparent 45%),
+    linear-gradient(120deg,#fff 20%,#f2f5f4 100%);
+  min-height:76vh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:35px;
+}
+.hero h1 span{color:var(--copper)}
+.hero p{max-width:610px;font-size:18px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero-visual{
+  position:relative;
+  min-height:380px;
+  border-radius:18px;
+  background:linear-gradient(140deg,#e4ebea,#b5c5c4);
+  overflow:hidden;
+  border:1px solid #ccd7d5;
+}
+.hero-visual:before{
+  content:"";
+  position:absolute;
+  width:370px;
+  height:370px;
+  border:1px solid #ffffffaa;
+  border-radius:50%;
+  right:-80px;
+  top:-100px;
+  box-shadow:0 0 0 55px #ffffff20,0 0 0 110px #ffffff12;
+}
+.hero-visual svg{position:absolute;inset:0;width:100%;height:100%}
+.hero-caption{
+  position:absolute;
+  left:22px;
+  bottom:22px;
+  background:#ffffffed;
+  border-left:4px solid var(--copper);
+  padding:13px 18px;
+  border-radius:5px;
+  color:var(--dark);
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:28px;
+  box-shadow:0 8px 28px #1c34340a;
+  transition:.2s;
+}
+.card:hover{
+  transform:translateY(-4px);
+  border-color:var(--copper-light);
+  box-shadow:0 15px 35px #1c343415;
+}
+.card h3{margin-top:8px}
+.card-number{font-size:12px;letter-spacing:2px;font-weight:bold;color:var(--copper)}
+.alt{background:var(--cream)}
+.light{background:var(--light)}
+.section-intro{max-width:760px;margin-bottom:30px}
+.process-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.35fr) minmax(280px,.8fr);
+  gap:25px;
+  align-items:start;
+}
+.diagram{
+  background:linear-gradient(140deg,#f3f7f6,#e4eceb);
+  border:1px solid #cddbd9;
+  border-radius:12px;
+  padding:18px;
+}
+.diagram svg{width:100%;height:auto;display:block}
+.diagram svg text{font:13px Arial,sans-serif;fill:#304347}
+.diagram .unit{
+  fill:#94aaa9;
+  stroke:#4f696d;
+  stroke-width:3;
+}
+.diagram .pipe{
+  fill:none;
+  stroke:#718d91;
+  stroke-width:16;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.diagram .flow{
+  fill:none;
+  stroke:#bd6644;
+  stroke-width:4;
+  stroke-dasharray:10 12;
+  animation:ashMove 2s linear infinite;
+}
+@keyframes ashMove{to{stroke-dashoffset:-44}}
+.diagram .selected{
+  filter:drop-shadow(0 0 8px #ce765a80);
+}
+.diagram .selected .unit{
+  stroke:#b95435;
+  stroke-width:5;
+}
+.diagram .selected .pipe{
+  stroke:#b95435;
+}
+.stage-buttons{display:grid;gap:9px}
+.stage-buttons button{
+  border:1px solid var(--border);
+  background:white;
+  color:var(--dark);
+  border-radius:7px;
+  padding:15px;
+  text-align:left;
+  font-weight:bold;
+}
+.stage-buttons button.active{
+  border-color:var(--copper);
+  background:#fff1e9;
+  color:var(--copper);
+}
+.stage-detail{
+  border-left:4px solid var(--copper);
+  padding:20px;
+  margin-top:15px;
+  background:#fff8f4;
+  border-radius:0 8px 8px 0;
+  min-height:145px;
+}
+.stage-detail h3{margin:0 0 8px}
+.stage-detail p{margin:0}
+.client{text-align:center;font-size:23px;font-weight:bold;color:var(--dark)}
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;
+}
+.person{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:0;
+  overflow:hidden;
+  text-align:left;
+  transition:.2s;
+}
+.person:hover{border-color:var(--copper);transform:translateY(-4px)}
+.person-art{
+  height:125px;
+  background:linear-gradient(135deg,#e9eeee,#c9d6d4);
+  display:grid;
+  place-items:center;
+  color:#a95337;
+  font-size:40px;
+  font-weight:bold;
+}
+.person-body{padding:20px}
+.person-body h3{margin:7px 0 5px;font-size:19px}
+.person-body p{font-size:13px;margin:0 0 10px}
+.person-body small{color:var(--copper);font-weight:bold}
+.profile{
+  margin-top:22px;
+  padding:24px;
+  border:1px solid var(--copper-light);
+  border-left:4px solid var(--copper);
+  border-radius:8px;
+  background:#fff8f4;
+}
+.profile[hidden]{display:none}
+.quote-layout{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:35px;
+}
+form{
+  background:white;
+  padding:28px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  box-shadow:0 10px 30px #203a3a0b;
+}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{margin-bottom:15px}
+label{display:block;font-size:13px;font-weight:bold;margin-bottom:6px}
+input,select,textarea{
+  width:100%;
+  padding:12px;
+  border:1px solid #c4d0ce;
+  border-radius:5px;
+  background:white;
+  color:var(--dark);
+}
+input:focus,select:focus,textarea:focus{
+  outline:2px solid #c77c5c50;
+  border-color:var(--copper);
+}
+textarea{min-height:125px;resize:vertical}
+.status{font-size:13px;color:var(--copper)}
+.navigator{position:fixed;bottom:20px;right:20px;z-index:50}
+.console{
+  display:none;
+  position:absolute;
+  right:0;
+  bottom:72px;
+  width:min(365px,90vw);
+  background:white;
+  border:1px solid #d4a08a;
+  box-shadow:0 20px 60px #1c303045;
+  border-radius:12px;
+  padding:22px;
+}
+.console.open{display:block}
+.console-head{
+  background:var(--dark);
+  padding:15px;
+  margin:-22px -22px 20px;
+  border-radius:11px 11px 0 0;
+}
+.console-head h3{color:white;margin:7px 0 0}
+.console-links{display:grid;gap:8px}
+.console-links a{
+  background:#f1f5f4;
+  border:1px solid #e0e8e6;
+  border-radius:6px;
+  padding:11px;
+  font-size:13px;
+  font-weight:bold;
+}
+.console-links a:hover{background:#fbe8df;border-color:var(--copper)}
+.radar{
+  height:115px;width:115px;margin:16px auto;
+  border:1px solid var(--copper);
+  border-radius:50%;
+  position:relative;
+  overflow:hidden;
+  background:repeating-radial-gradient(circle,transparent 0 20px,#b9543530 21px 22px);
+}
+.radar:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:conic-gradient(#b9543555,transparent 80deg,transparent 360deg);
+  animation:scan 5s linear infinite;
+}
+@keyframes scan{to{transform:rotate(360deg)}}
+footer{
+  background:#253438;
+  color:white;
+  padding:38px 7%;
+}
+footer p{color:#cbd5d4}
+@media(max-width:950px){
+  header{flex-direction:column}
+  nav{justify-content:center}
+  .hero-grid,.process-layout,.quote-layout{grid-template-columns:1fr}
+  .hero-visual{min-height:320px}
+  .grid,.team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:580px){
+  section{padding:65px 6%}
+  .grid,.team-grid,.fields{grid-template-columns:1fr}
+  nav{gap:12px}
+  nav a{font-size:12px}
+  .logo{height:72px}
+  .hero-visual{min-height:250px}
 }
 @media(prefers-reduced-motion:reduce){
-*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}
+  *,*:before,*:after{animation:none!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
 <body>
 
 <header>
-<a href="#home">
-<img class="logo" src="mnb-logo.png" alt="M&B Business Solutions">
-</a>
-<nav>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#process">Fly Ash</a>
-<a href="#clients">Clients</a>
-<a href="#team">Leadership</a>
-<a href="#contact">Get a Quote</a>
-</nav>
+  <a href="#home" aria-label="M&B Business Solutions homepage">
+    <img class="logo" src="mnb-logo.jpg" alt="M&B Business Solutions logo">
+  </a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#process">Fly Ash</a>
+    <a href="#clients">Clients</a>
+    <a href="#team">Leadership</a>
+    <a href="#contact">Get a Quote</a>
+  </nav>
 </header>
 
 <main>
 <section class="hero" id="home">
-<div class="wrap" style="width:100%">
-<div class="eyebrow">M&B BUSINESS SOLUTIONS / SOUTH AFRICA</div>
-<h1>RELIABLE SUPPLY.<br><span>STRONGER MINING.</span></h1>
-<p>Supporting mining and industrial operations through coordinated material supply and dependable business relationships.</p>
-<div class="actions">
-<a class="btn" href="#services">Explore Our Services</a>
-<a class="btn outline" href="#contact">Request a Quotation</a>
-</div>
-</div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">M&B BUSINESS SOLUTIONS / SOUTH AFRICA</div>
+      <h1>RELIABLE SUPPLY.<br><span>STRONGER MINING.</span></h1>
+      <p>Supporting mining and industrial operations through material supply solutions, professional coordination and dependable business relationships.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#services">Explore Our Services</a>
+        <a class="btn btn-outline" href="#contact">Request a Quotation</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 500 380" aria-hidden="true">
+        <rect x="0" y="330" width="500" height="50" fill="#859c9c"/>
+        <path d="M35 330V200H140V330" fill="#607a7e"/>
+        <path d="M48 200V155H125V200" fill="#91a6a5"/>
+        <path d="M150 330V125Q150 70 230 70Q310 70 310 125V330Z" fill="#7f999a" stroke="#49676b" stroke-width="4"/>
+        <path d="M175 125H285M175 185H285M175 245H285" stroke="#aec0bf" stroke-width="6"/>
+        <path d="M230 70V35H385V120" fill="none" stroke="#526f74" stroke-width="19"/>
+        <path d="M340 330V180Q340 130 410 130Q480 130 480 180V330Z" fill="#b0c0be" stroke="#526f74" stroke-width="4"/>
+        <path d="M365 205H455M365 245H455" stroke="#799393" stroke-width="5"/>
+        <path d="M90 155V95H155" fill="none" stroke="#b95435" stroke-width="11"/>
+        <circle cx="385" cy="120" r="9" fill="#b95435"/>
+      </svg>
+      <div class="hero-caption">INDUSTRIAL MATERIAL SUPPLY & COORDINATION</div>
+    </div>
+  </div>
 </section>
 
 <section id="about">
-<div class="wrap">
-<div class="eyebrow">ABOUT OUR BUSINESS</div>
-<h2>Industrial supply with purpose.</h2>
-<p>M&B Business Solutions supports mining and industrial operations with material supply services and operational coordination.</p>
-</div>
+  <div class="wrap">
+    <div class="eyebrow">WHO WE ARE</div>
+    <h2>Built for industrial requirements.</h2>
+    <p class="section-intro">M&B Business Solutions supports mining and industrial operations through material supply services and operational coordination. Our approach centres on understanding client requirements and supporting reliable delivery outcomes.</p>
+  </div>
 </section>
 
 <section id="services" class="alt">
-<div class="wrap">
-<div class="eyebrow">OUR SERVICES</div>
-<h2>Industrial capabilities.</h2>
-<div class="grid">
-<div class="card"><h3>01 / Fly Ash Supply</h3><p>Fly ash supply solutions for suitable industrial and mining applications.</p></div>
-<div class="card"><h3>02 / Mining Solutions</h3><p>Supporting material requirements for mining operations.</p></div>
-<div class="card"><h3>03 / Logistics Coordination</h3><p>Supporting delivery planning and coordination with transport service providers.</p></div>
-</div>
-</div>
+  <div class="wrap">
+    <div class="eyebrow">OUR CAPABILITIES</div>
+    <h2>What We Do</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="card-number">01 / MATERIAL SUPPLY</div>
+        <h3>Fly Ash Supply</h3>
+        <p>Fly ash supply solutions for suitable mining and industrial applications.</p>
+      </article>
+      <article class="card">
+        <div class="card-number">02 / INDUSTRIAL SUPPORT</div>
+        <h3>Mining Solutions</h3>
+        <p>Supporting mining operations through coordinated industrial material supply services.</p>
+      </article>
+      <article class="card">
+        <div class="card-number">03 / OPERATIONS</div>
+        <h3>Logistics Coordination</h3>
+        <p>Supporting material delivery planning and communication with transport service providers.</p>
+      </article>
+    </div>
+  </div>
 </section>
 
 <section id="process">
-<div class="wrap">
-<div class="eyebrow">INTERACTIVE INDUSTRIAL EXPLORER</div>
-<h2>Understanding Fly Ash Handling</h2>
-<p>Select a stage to explore a simplified, educational example of industrial fly ash collection and storage.</p>
-<div class="process">
-<div class="diagram">
-<div class="eyebrow">PROCESS SCHEMATIC / NOT TO SCALE</div>
-<svg viewBox="0 0 600 360" role="img" aria-label="Schematic of fly ash collection equipment, conveying pipe and storage silo">
-<defs>
-<linearGradient id="metal" x1="0" x2="1">
-<stop stop-color="#52696d"/>
-<stop offset=".5" stop-color="#a5b7b7"/>
-<stop offset="1" stop-color="#52696d"/>
-</linearGradient>
-</defs>
-<path d="M25 312H575" stroke="#849697" stroke-width="5"/>
-<g id="sourceUnit">
-<rect x="30" y="105" width="125" height="140" rx="8" fill="url(#metal)" stroke="#c1cdcc" stroke-width="3"/>
-<path d="M45 135H140M45 165H140M45 195H140" stroke="#42585d" stroke-width="6"/>
-<text x="92" y="92" text-anchor="middle">Collection unit</text>
-</g>
-<g id="pipeUnit">
-<path class="pipe" d="M155 154H340V100H410"/>
-<path class="flow" d="M155 154H340V100H410"/>
-<text x="275" y="130" text-anchor="middle">Conveying line</text>
-</g>
-<g id="siloUnit">
-<path d="M405 100Q405 50 480 50Q555 50 555 100V248H405Z" fill="url(#metal)" stroke="#c1cdcc" stroke-width="3"/>
-<path d="M405 248L480 305L555 248Z" fill="#71888b" stroke="#c1cdcc" stroke-width="3"/>
-<path d="M430 276V315M530 276V315" stroke="#a5b7b7" stroke-width="8"/>
-<text x="480" y="175" text-anchor="middle" fill="#172225">STORAGE</text>
-<text x="480" y="194" text-anchor="middle" fill="#172225">SILO</text>
-</g>
-<g id="outletUnit">
-<path d="M480 305V330H550" stroke="#a5b7b7" stroke-width="9" fill="none"/>
-<rect x="538" y="318" width="35" height="24" rx="3" fill="#607579" stroke="#c1cdcc" stroke-width="2"/>
-<text x="525" y="355" text-anchor="middle">Discharge</text>
-</g>
-</svg>
-<p style="font-size:12px">Illustrative process only. This is not a representation of M&B-owned equipment or its commercial supply chain.</p>
-</div>
-<div>
-<div class="eyebrow">SELECT PROCESS STAGE</div>
-<div class="stages" id="stageButtons"></div>
-<div class="detail">
-<h3 id="stageTitle"></h3>
-<p id="stageText"></p>
-</div>
-</div>
-</div>
-</div>
+  <div class="wrap">
+    <div class="eyebrow">INTERACTIVE INDUSTRIAL EXPLORER</div>
+    <h2>Understanding Fly Ash</h2>
+    <p class="section-intro">Explore a simplified industrial process from fly ash collection to storage and handling. Select a stage to highlight the relevant equipment.</p>
+    <div class="process-layout">
+      <div class="diagram">
+        <div class="eyebrow">INDUSTRIAL PROCESS SCHEMATIC</div>
+        <svg viewBox="0 0 600 360" role="img" aria-label="Fly ash collection, conveying and storage process">
+          <path d="M20 315H580" stroke="#718b8d" stroke-width="5"/>
+          <g id="collection">
+            <rect class="unit" x="35" y="112" width="120" height="140" rx="8"/>
+            <path d="M50 142H140M50 177H140M50 212H140" stroke="#dce6e4" stroke-width="6"/>
+            <text x="95" y="94" text-anchor="middle">Collection</text>
+          </g>
+          <g id="conveying">
+            <path class="pipe" d="M155 165H335V100H420"/>
+            <path class="flow" d="M155 165H335V100H420"/>
+            <text x="260" y="140" text-anchor="middle">Conveying line</text>
+          </g>
+          <g id="storage">
+            <path class="unit" d="M405 102Q405 52 480 52Q555 52 555 102V247H405Z"/>
+            <path class="unit" d="M405 247L480 298L555 247Z"/>
+            <path d="M430 278V315M530 278V315" stroke="#607a7e" stroke-width="8"/>
+            <text x="480" y="165" text-anchor="middle">STORAGE</text>
+            <text x="480" y="185" text-anchor="middle">SILO</text>
+          </g>
+          <g id="discharge">
+            <path class="pipe" d="M480 298V330H555"/>
+            <rect class="unit" x="535" y="317" width="38" height="27" rx="3"/>
+            <text x="520" y="357" text-anchor="middle">Discharge</text>
+          </g>
+        </svg>
+        <p style="font-size:12px">Educational diagram, not to scale. It does not represent M&B-owned facilities or confidential commercial arrangements.</p>
+      </div>
+      <div>
+        <div class="eyebrow">EXPLORE THE PROCESS</div>
+        <div class="stage-buttons" id="stageButtons"></div>
+        <div class="stage-detail">
+          <h3 id="stageTitle"></h3>
+          <p id="stageText"></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="clients" class="alt">
-<div class="wrap">
-<div class="eyebrow">INDUSTRY RELATIONSHIPS</div>
-<h2>Client Showcase</h2>
-<p>Names displayed for management review, pending approval for public use.</p>
-<div class="grid">
-<div class="card client">ROSOND</div>
-<div class="card client">VALTERRA</div>
-<div class="card client">AFRIMAT</div>
-</div>
-</div>
+<section id="clients" class="light">
+  <div class="wrap">
+    <div class="eyebrow">INDUSTRY RELATIONSHIPS</div>
+    <h2>Client Showcase</h2>
+    <p class="section-intro">Client names included for management review and subject to approval for public display.</p>
+    <div class="grid">
+      <div class="card client">ROSOND</div>
+      <div class="card client">VALTERRA</div>
+      <div class="card client">AFRIMAT</div>
+    </div>
+  </div>
 </section>
 
 <section id="team">
-<div class="wrap">
-<div class="eyebrow">THE PEOPLE BEHIND M&B</div>
-<h2>Leadership & Operations Team</h2>
-<p>Select a profile to view its details. Biographies and photographs will be added when available.</p>
-<div class="team" id="teamGrid"></div>
-<div class="profile" id="profile" hidden>
-<h3 id="profileName"></h3>
-<p id="profileRole"></p>
-<p id="profileBio"></p>
-<button class="btn outline" id="closeProfile">Close Profile</button>
-</div>
-</div>
+  <div class="wrap">
+    <div class="eyebrow">THE PEOPLE BEHIND M&B</div>
+    <h2>Leadership & Operations Team</h2>
+    <p class="section-intro">Meet the professionals supporting M&B Business Solutions. Select a profile for more information.</p>
+    <div class="team-grid" id="teamGrid"></div>
+    <div class="profile" id="profile" hidden aria-live="polite">
+      <h3 id="profileName"></h3>
+      <p id="profileRole"></p>
+      <p id="profileBio"></p>
+      <button class="btn btn-outline" id="closeProfile">Close Profile</button>
+    </div>
+  </div>
 </section>
 
 <section id="contact" class="alt">
-<div class="wrap">
-<div class="eyebrow">BUSINESS ENQUIRIES</div>
-<h2>Request a Quotation</h2>
-<div class="contact">
-<div>
-<h3>Let's discuss your requirements.</h3>
-<p>Prepare a structured enquiry for M&B Business Solutions.</p>
-<p>This preview form copies your enquiry to the clipboard. It does not submit or store customer information.</p>
-<p>Official company contact details: To be confirmed.</p>
-</div>
-<form id="quoteForm">
-<div class="fields">
-<div class="field"><label for="company">Company name *</label><input id="company" required></div>
-<div class="field"><label for="person">Contact person *</label><input id="person" required></div>
-<div class="field"><label for="email">Business email *</label><input id="email" type="email" required></div>
-<div class="field"><label for="phone">Phone</label><input id="phone" type="tel"></div>
-<div class="field">
-<label for="service">Service required *</label>
-<select id="service" required>
-<option value="">Select service</option>
-<option>Fly Ash Supply</option>
-<option>Mining Solutions</option>
-<option>Logistics Coordination</option>
-<option>General Enquiry</option>
-</select>
-</div>
-<div class="field"><label for="quantity">Estimated quantity (tonnes)</label><input id="quantity" type="number" min="0" step="any"></div>
-</div>
-<div class="field"><label for="location">Project location</label><input id="location"></div>
-<div class="field"><label for="requirements">Requirements *</label><textarea id="requirements" required></textarea></div>
-<button class="btn" type="submit">Copy Quotation Enquiry</button>
-<p class="status" id="formStatus" role="status"></p>
-</form>
-</div>
-</div>
+  <div class="wrap">
+    <div class="eyebrow">BUSINESS ENQUIRIES</div>
+    <h2>Request a Quotation</h2>
+    <div class="quote-layout">
+      <div>
+        <h3>Let's discuss your requirements.</h3>
+        <p>Tell us about your company, material requirements and project location.</p>
+        <p>This preview prepares an enquiry you can copy. It does not yet send or store submissions.</p>
+        <div class="card">
+          <div class="eyebrow">OFFICIAL CONTACT INFORMATION</div>
+          <p>Company email: To be confirmed</p>
+          <p>Telephone: To be confirmed</p>
+        </div>
+      </div>
+      <form id="quoteForm">
+        <div class="fields">
+          <div class="field"><label for="company">Company name *</label><input id="company" required></div>
+          <div class="field"><label for="person">Contact person *</label><input id="person" required></div>
+          <div class="field"><label for="email">Business email *</label><input id="email" type="email" required></div>
+          <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel"></div>
+          <div class="field">
+            <label for="service">Service required *</label>
+            <select id="service" required>
+              <option value="">Select service</option>
+              <option>Fly Ash Supply</option>
+              <option>Mining Solutions</option>
+              <option>Logistics Coordination</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="field"><label for="quantity">Estimated quantity (tonnes)</label><input id="quantity" type="number" min="0" step="any"></div>
+        </div>
+        <div class="field"><label for="location">Project location</label><input id="location"></div>
+        <div class="field"><label for="requirements">Project requirements *</label><textarea id="requirements" required></textarea></div>
+        <button class="btn" type="submit">Copy Quotation Enquiry</button>
+        <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
 </section>
 </main>
 
 <footer>
-<strong>M&B BUSINESS SOLUTIONS</strong>
-<p>Mining & Industrial Supply Solutions</p>
-<p style="font-size:12px">Management concept preview — not an official public launch.</p>
+  <div class="wrap">
+    <strong>M&B BUSINESS SOLUTIONS</strong>
+    <p>Mining & Industrial Supply Solutions</p>
+    <p style="font-size:12px">Management concept preview — not an official public launch.</p>
+    <small>© <span id="year"></span> M&B Business Solutions</small>
+  </div>
 </footer>
 
 <div class="navigator">
-<div class="console" id="console">
-<div class="eyebrow">M&B OPERATIONS CONSOLE</div>
-<h3>Mining Navigator</h3>
-<div class="radar" aria-hidden="true"></div>
-<div class="console-links">
-<a href="#about">01 / Company Overview</a>
-<a href="#services">02 / Services</a>
-<a href="#process">03 / Industrial Process Explorer</a>
-<a href="#clients">04 / Client Showcase</a>
-<a href="#team">05 / Leadership Team</a>
-<a href="#contact">06 / Request a Quote</a>
-</div>
-</div>
-<button class="btn" id="navToggle" aria-expanded="false">⚙ Mining Navigator</button>
+  <div class="console" id="console">
+    <div class="console-head">
+      <div class="eyebrow">M&B OPERATIONS CONSOLE</div>
+      <h3>Mining Navigator</h3>
+    </div>
+    <div class="radar" aria-hidden="true"></div>
+    <div class="console-links">
+      <a href="#about">01 / Company Overview</a>
+      <a href="#services">02 / Services</a>
+      <a href="#process">03 / Fly Ash Explorer</a>
+      <a href="#clients">04 / Client Showcase</a>
+      <a href="#team">05 / Leadership Team</a>
+      <a href="#contact">06 / Request a Quote</a>
+    </div>
+  </div>
+  <button class="btn" id="navToggle" aria-controls="console" aria-expanded="false">⚙ Mining Navigator</button>
 </div>
 
 <script>
 const stages=[
-{title:"Collection",text:"Industrial equipment captures fly ash particles from flue gases. The illustration shows a simplified collection unit.",id:"sourceUnit"},
-{title:"Conveying",text:"Captured fly ash can move through enclosed conveying systems to a storage facility.",id:"pipeUnit"},
-{title:"Storage",text:"Storage silos hold collected fly ash for controlled handling and onward use.",id:"siloUnit"},
-{title:"Discharge",text:"Suitable material can be discharged for subsequent handling or transport.",id:"outletUnit"}
+  {title:"Collection",text:"Industrial collection equipment separates fly ash particles from flue gases.",id:"collection"},
+  {title:"Conveying",text:"Collected material can move through enclosed conveying systems towards storage facilities.",id:"conveying"},
+  {title:"Storage",text:"Fly ash may be held in storage silos for controlled handling.",id:"storage"},
+  {title:"Discharge",text:"Suitable material can be discharged for further handling, testing or transport.",id:"discharge"}
 ];
 
-const buttons=document.getElementById("stageButtons");
-function activateStage(i){
-document.querySelectorAll(".stages button").forEach((b,j)=>b.classList.toggle("active",i===j));
-document.querySelectorAll("#sourceUnit,#pipeUnit,#siloUnit,#outletUnit").forEach(g=>g.classList.remove("highlight"));
-document.getElementById(stages[i].id).classList.add("highlight");
-document.getElementById("stageTitle").textContent=stages[i].title;
-document.getElementById("stageText").textContent=stages[i].text;
+const stageButtons=document.getElementById("stageButtons");
+function selectStage(i){
+  document.querySelectorAll(".stage-buttons button").forEach((b,j)=>{
+    b.classList.toggle("active",i===j);
+    b.setAttribute("aria-pressed",String(i===j));
+  });
+  document.querySelectorAll("#collection,#conveying,#storage,#discharge")
+    .forEach(el=>el.classList.remove("selected"));
+  document.getElementById(stages[i].id).classList.add("selected");
+  document.getElementById("stageTitle").textContent=stages[i].title;
+  document.getElementById("stageText").textContent=stages[i].text;
 }
 stages.forEach((s,i)=>{
-const b=document.createElement("button");
-b.textContent=String(i+1).padStart(2,"0")+" / "+s.title;
-b.onclick=()=>activateStage(i);
-buttons.appendChild(b);
+  const b=document.createElement("button");
+  b.type="button";
+  b.textContent=String(i+1).padStart(2,"0")+" / "+s.title;
+  b.addEventListener("click",()=>selectStage(i));
+  stageButtons.appendChild(b);
 });
-activateStage(0);
+selectStage(0);
 
 const team=[
-{name:"Merafe Tisane",role:"Managing Director",bio:"Managing Director"},
-{name:"Thulane Kota",role:"Technical Director",bio:"Professional biography to be added."},
-{name:"Thabang Selamolela",role:"Second Managing Director",bio:"Professional biography to be added."},
-{name:"Buang Tisane",role:"Logistics Coordinator",bio:"Professional biography to be added."},
-{name:"Thando Mtshali",role:"Project Coordinator",bio:"Professional biography to be added."}
+  {name:"Merafe Tisane",role:"Managing Director",bio:"Managing Director"},
+  {name:"Thulane Kota",role:"Technical Director",bio:"Professional biography to be added."},
+  {name:"Thabang Selamolela",role:"Second Managing Director",bio:"Professional biography to be added."},
+  {name:"Buang Tisane",role:"Logistics Coordinator",bio:"Professional biography to be added."},
+  {name:"Thando Mtshali",role:"Project Coordinator",bio:"Professional biography to be added."}
 ];
+
 const teamGrid=document.getElementById("teamGrid");
 team.forEach(person=>{
-const card=document.createElement("button");
-card.className="person";
-const initials=document.createElement("div");
-initials.className="initials";
-initials.textContent=person.name.split(" ").map(n=>n[0]).join("");
-const info=document.createElement("div");
-info.className="person-info";
-const name=document.createElement("h3");
-name.textContent=person.name;
-const role=document.createElement("p");
-role.textContent=person.role;
-const hint=document.createElement("small");
-hint.textContent="View Profile →";
-info.append(name,role,hint);
-card.append(initials,info);
-card.onclick=()=>{
-document.getElementById("profileName").textContent=person.name;
-document.getElementById("profileRole").textContent=person.role;
-document.getElementById("profileBio").textContent=person.bio;
-const profile=document.getElementById("profile");
-profile.hidden=false;
-profile.scrollIntoView({behavior:"smooth",block:"nearest"});
-};
-teamGrid.appendChild(card);
+  const card=document.createElement("button");
+  card.type="button";
+  card.className="person";
+
+  const art=document.createElement("div");
+  art.className="person-art";
+  art.textContent=person.name.split(" ").map(s=>s[0]).join("");
+
+  const body=document.createElement("div");
+  body.className="person-body";
+  const name=document.createElement("h3");
+  name.textContent=person.name;
+  const role=document.createElement("p");
+  role.textContent=person.role;
+  const hint=document.createElement("small");
+  hint.textContent="View Profile →";
+
+  body.append(name,role,hint);
+  card.append(art,body);
+  card.addEventListener("click",()=>{
+    document.getElementById("profileName").textContent=person.name;
+    document.getElementById("profileRole").textContent=person.role;
+    document.getElementById("profileBio").textContent=person.bio;
+    const profile=document.getElementById("profile");
+    profile.hidden=false;
+    profile.scrollIntoView({behavior:"smooth",block:"nearest"});
+  });
+  teamGrid.appendChild(card);
 });
-document.getElementById("closeProfile").onclick=()=>document.getElementById("profile").hidden=true;
+document.getElementById("closeProfile").addEventListener("click",()=>{
+  document.getElementById("profile").hidden=true;
+});
 
 const toggle=document.getElementById("navToggle");
 const consolePanel=document.getElementById("console");
 function closeConsole(){
-consolePanel.classList.remove("open");
-toggle.setAttribute("aria-expanded","false");
+  consolePanel.classList.remove("open");
+  toggle.setAttribute("aria-expanded","false");
 }
-toggle.onclick=()=>{
-const open=consolePanel.classList.toggle("open");
-toggle.setAttribute("aria-expanded",String(open));
-};
-document.querySelectorAll(".console-links a").forEach(a=>a.onclick=closeConsole);
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeConsole()});
+toggle.addEventListener("click",()=>{
+  const open=consolePanel.classList.toggle("open");
+  toggle.setAttribute("aria-expanded",String(open));
+});
+document.querySelectorAll(".console-links a").forEach(a=>{
+  a.addEventListener("click",closeConsole);
+});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape")closeConsole();
+});
 
 const form=document.getElementById("quoteForm");
-form.onsubmit=async e=>{
-e.preventDefault();
-if(!form.reportValidity())return;
-const fields=["company","person","email","phone","service","quantity","location","requirements"];
-const labels=["Company","Contact","Email","Phone","Service","Quantity (tonnes)","Project Location","Requirements"];
-const message="M&B BUSINESS SOLUTIONS — QUOTATION ENQUIRY\n\n"+
-fields.map((id,i)=>labels[i]+": "+(document.getElementById(id).value||"Not specified")).join("\n");
-const status=document.getElementById("formStatus");
-try{
-await navigator.clipboard.writeText(message);
-status.textContent="Enquiry copied successfully. Paste it into your email application.";
-}catch(err){
-status.textContent="Clipboard access unavailable. Please copy the information manually.";
-}
-};
+form.addEventListener("submit",async e=>{
+  e.preventDefault();
+  if(!form.reportValidity())return;
+
+  const fields=[
+    ["Company","company"],
+    ["Contact","person"],
+    ["Email","email"],
+    ["Phone","phone"],
+    ["Service","service"],
+    ["Quantity (tonnes)","quantity"],
+    ["Project location","location"],
+    ["Requirements","requirements"]
+  ];
+
+  const message="M&B BUSINESS SOLUTIONS - QUOTATION ENQUIRY\n\n"+
+    fields.map(([label,id])=>{
+      return label+": "+(document.getElementById(id).value||"Not specified");
+    }).join("\n");
+
+  const status=document.getElementById("formStatus");
+  try{
+    await navigator.clipboard.writeText(message);
+    status.textContent="Enquiry copied. Paste it into your email application.";
+  }catch(error){
+    status.textContent="Clipboard unavailable. Please copy the enquiry details manually.";
+  }
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
