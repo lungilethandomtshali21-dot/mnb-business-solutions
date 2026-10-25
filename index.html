@@ -3,366 +3,864 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#11191b">
-<title>M&B Business Solutions | Mining & Industrial Supply</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101719">
+<meta name="description" content="M&B Business Solutions — Mining and industrial supply solutions.">
+<title>M&B Business Solutions | Industrial Solutions</title>
 <style>
-:root{
---bg:#101719;--panel:#202b2e;
---copper:#c16e50;--text:#f5f1eb;
---muted:#bac4c3;--line:#ffffff22
+:root {
+  --bg:#101719;
+  --bg2:#172225;
+  --panel:#202d30;
+  --copper:#c47858;
+  --copper2:#edaa86;
+  --white:#f5f2ed;
+  --muted:#b5c0c0;
+  --border:#ffffff24;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Arial,sans-serif}
-a{color:inherit}
-button{font:inherit;cursor:pointer}
-header{
-position:sticky;top:0;z-index:20;
-display:flex;justify-content:space-between;
-align-items:center;gap:20px;padding:16px 6%;
-background:#101719f5;border-bottom:1px solid var(--line)
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--white);
+  font:16px/1.6 Arial,Helvetica,sans-serif;
 }
-.brand{font-weight:900;font-size:20px;letter-spacing:1px}
-.brand span,.accent{color:var(--copper)}
-nav{display:flex;gap:19px;flex-wrap:wrap}
-nav a{text-decoration:none;font-size:13px}
-nav a:hover{color:var(--copper)}
-section{padding:85px 7%;scroll-margin-top:90px}
-.eyebrow{font-size:12px;letter-spacing:3px;color:#e4a187;font-weight:bold}
-h1{font-size:clamp(44px,7vw,90px);line-height:1.06;letter-spacing:-2px;margin:22px 0}
-h2{font-size:clamp(30px,4vw,51px);line-height:1.12;margin:14px 0 25px}
-h3{margin:0 0 10px}
-p{color:var(--muted);max-width:720px}
-.hero{
-min-height:82vh;display:flex;flex-direction:column;
-justify-content:center;position:relative;overflow:hidden;
-background:radial-gradient(ellipse at 80% 65%,#a45a3640,transparent 55%),linear-gradient(120deg,#263337,#101719)
+button,input,select,textarea {font:inherit}
+button {cursor:pointer}
+a {color:inherit;text-decoration:none}
+h1,h2,h3,p {margin-top:0}
+h1 {font-size:clamp(43px,7vw,94px);line-height:1.04;letter-spacing:-2px}
+h2 {font-size:clamp(31px,4vw,54px);line-height:1.14}
+h3 {font-size:20px}
+p {color:var(--muted)}
+section {padding:95px 7%;scroll-margin-top:90px}
+.eyebrow {
+  color:var(--copper2);
+  letter-spacing:3px;
+  font-size:11px;
+  font-weight:bold;
+  text-transform:uppercase;
 }
-.hero>*{position:relative;z-index:1}
-.hero p{font-size:18px}
-.btn{
-display:inline-block;padding:13px 23px;
-background:var(--copper);border:0;border-radius:5px;
-color:white;text-decoration:none;font-weight:bold
+.btn {
+  border:1px solid var(--copper);
+  background:var(--copper);
+  color:white;
+  padding:13px 21px;
+  border-radius:5px;
+  display:inline-block;
+  font-weight:bold;
+  transition:.2s;
 }
-.btn:hover{background:#d88768}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.card{
-padding:27px;border:1px solid var(--line);
-background:var(--panel);border-radius:9px
+.btn:hover {background:#dc8c69}
+.btn-outline {background:transparent}
+.btn-outline:hover {background:#c4785825}
+.muted {color:var(--muted)}
+.wrap {max-width:1200px;margin:auto}
+.grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;
 }
-.card h3{color:#e8a88e}
-.card:hover{border-color:#c16e5080}
-.scene{
-height:350px;position:relative;overflow:hidden;
-background:linear-gradient(#2a3a3d,#141e20);
-border:1px solid #ffffff30;border-radius:12px;margin:30px 0
+.panel {
+  border:1px solid var(--border);
+  background:var(--panel);
+  padding:27px;
+  border-radius:9px;
 }
-.ground{position:absolute;bottom:0;width:100%;height:45px;background:#344043}
-.silo{
-position:absolute;bottom:65px;left:52%;
-transform:translateX(-50%);width:155px;height:205px;
-background:linear-gradient(90deg,#465458,#aeb9b7 50%,#4a575a);
-border:3px solid #889593;border-radius:48px 48px 7px 7px;
-box-shadow:15px 12px 25px #0006
+.panel:hover {border-color:#c4785877}
+.panel h3 {color:var(--copper2)}
+header {
+  position:sticky;
+  top:0;
+  z-index:30;
+  padding:14px 5%;
+  background:#101719f5;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
 }
-.silo:after{
-content:"";position:absolute;bottom:-45px;left:17px;
-width:115px;height:45px;background:#4b595b;
-clip-path:polygon(0 0,100% 0,75% 100%,25% 100%)
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
-.pipe{
-position:absolute;left:7%;top:110px;width:45%;
-height:17px;background:linear-gradient(#b0b9b7,#647477);
-border-radius:8px
+.brand-symbol {
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--copper);
+  border-radius:5px;
+  font-weight:900;
+  font-size:17px;
+  color:var(--copper2);
+  letter-spacing:-2px;
+  background:linear-gradient(135deg,#344347,#141d20);
 }
-.filter{
-position:absolute;left:7%;top:75px;width:105px;height:120px;
-border:3px solid #81908f;background:linear-gradient(90deg,#455357,#899594,#455357);
-border-radius:8px
+.brand-name {font-weight:900;letter-spacing:1px;font-size:14px}
+.brand-name small {
+  display:block;
+  font-size:9px;
+  letter-spacing:2px;
+  color:var(--muted);
+  font-weight:normal;
 }
-.filter:after{
-content:"FILTER";position:absolute;bottom:10px;left:19px;
-font-size:11px;letter-spacing:2px;color:white
+.brand-image {
+  display:none;
+  max-height:55px;
+  max-width:220px;
+  object-fit:contain;
 }
-.dust{
-position:absolute;width:5px;height:5px;
-border-radius:50%;background:#e5d7bd;
-animation:moveDust 4s linear infinite
+nav {display:flex;gap:20px;flex-wrap:wrap}
+nav a {font-size:12px;color:#e1e5e3}
+nav a:hover {color:var(--copper2)}
+.hero {
+  position:relative;
+  min-height:85vh;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 78% 65%,#ac5e3a35,transparent 50%),
+    linear-gradient(115deg,#243438,#101719 75%);
 }
-@keyframes moveDust{
-0%{transform:translateX(-25px);opacity:0}
-25%{opacity:1}
-100%{transform:translateX(450px);opacity:0}
+.hero:after {
+  content:"";
+  position:absolute;
+  right:-120px;
+  top:5%;
+  width:530px;
+  height:530px;
+  border:1px solid #c478582b;
+  border-radius:50%;
+  box-shadow:0 0 0 75px #c4785808,0 0 0 150px #c4785805;
+  pointer-events:none;
 }
-.stages{display:flex;gap:10px;flex-wrap:wrap}
-.stages button{
-background:#283639;border:1px solid #697574;
-color:white;padding:11px 15px;border-radius:5px
+.hero-content {position:relative;z-index:1;max-width:1000px}
+.hero h1 {margin:22px 0}
+.hero h1 span {color:var(--copper2)}
+.hero p {font-size:18px;max-width:630px}
+.hero-actions {display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.stats {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  border-top:1px solid var(--border);
+  margin-top:65px;
+  padding-top:22px;
+  max-width:800px;
 }
-.stages button.active{background:var(--copper);border-color:var(--copper)}
-#stageInfo{min-height:65px}
-.team{
-display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px
+.stat strong {display:block;color:var(--copper2);font-size:18px}
+.stat small {color:var(--muted);font-size:12px}
+.alt {background:var(--bg2)}
+.service-icon {
+  font-size:30px;
+  color:var(--copper2);
+  margin-bottom:20px;
 }
-.member{
-padding:0;background:var(--panel);border:1px solid var(--line);
-border-radius:10px;color:white;text-align:left;overflow:hidden;
-transition:transform .2s,border-color .2s
+.process-layout {
+  display:grid;
+  grid-template-columns:minmax(0,1.4fr) minmax(270px,.8fr);
+  gap:25px;
+  align-items:stretch;
 }
-.member:hover{transform:translateY(-5px);border-color:var(--copper)}
-.avatar{
-height:150px;background:#354144;
-display:flex;align-items:center;justify-content:center;
-font-size:46px;color:#e5a48a
+.industrial-scene {
+  height:400px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid #607073;
+  border-radius:10px;
+  background:
+    repeating-linear-gradient(0deg,transparent 0 39px,#ffffff06 40px),
+    linear-gradient(#304348,#172225);
 }
-.member-info{padding:22px}
-.member-info small{color:#e3a48b}
-.member-info h3{margin:7px 0 3px;color:white}
-.member-info p{margin:0;font-size:13px}
-.profile{
-background:#263437;border:1px solid var(--copper);
-border-radius:10px;padding:25px;margin-top:20px
+.scene-label {
+  position:absolute;
+  left:18px;
+  top:16px;
+  font-size:11px;
+  letter-spacing:2px;
+  color:#dce2df;
 }
-.profile[hidden]{display:none}
-.client{text-align:center;font-weight:900;font-size:23px;letter-spacing:1px}
-.navigator{position:fixed;bottom:22px;right:22px;z-index:50}
-#navPanel{
-display:none;position:absolute;bottom:72px;right:0;
-width:min(355px,90vw);padding:23px;
-background:#1b2729;border:1px solid var(--copper);
-border-radius:12px;box-shadow:0 20px 50px #000b
+.scene-ground {
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:45px;
+  background:#3c4a4d;
+  border-top:3px solid #758385;
 }
-#navPanel.open{display:block}
-.radar{
-height:105px;width:105px;margin:15px auto;
-border:1px solid #c16e5066;border-radius:50%;
-background:repeating-radial-gradient(circle,transparent 0 21px,#c16e5033 22px 23px);
-position:relative;overflow:hidden
+.filter-unit {
+  position:absolute;
+  left:7%;
+  bottom:90px;
+  width:105px;
+  height:165px;
+  background:linear-gradient(90deg,#445559,#9ba9a8,#435155);
+  border:3px solid #7d9090;
+  border-radius:9px;
 }
-.radar:after{
-content:"";position:absolute;inset:0;
-background:conic-gradient(from 0deg,#c16e5088,transparent 85deg,transparent 360deg);
-animation:scan 4s linear infinite
+.filter-unit:after {
+  content:"FILTRATION";
+  position:absolute;
+  bottom:17px;
+  left:9px;
+  font-size:10px;
+  color:#172225;
+  font-weight:bold;
 }
-@keyframes scan{to{transform:rotate(360deg)}}
-.navlinks{display:grid;gap:8px}
-.navlinks a{
-background:#2c3a3d;padding:11px;
-border-radius:5px;text-decoration:none
+.pipeline {
+  position:absolute;
+  left:calc(7% + 100px);
+  bottom:197px;
+  width:38%;
+  height:20px;
+  border:3px solid #a0afad;
+  background:#526366;
+  border-radius:4px;
 }
-.navlinks a:hover{background:#46575a}
-footer{padding:35px 7%;background:#0a1011;border-top:1px solid var(--line)}
-@media(max-width:900px){
-header{flex-direction:column}
-nav{justify-content:center}
-.grid,.team{grid-template-columns:repeat(2,minmax(0,1fr))}
+.silo {
+  position:absolute;
+  bottom:85px;
+  right:13%;
+  width:145px;
+  height:235px;
+  background:linear-gradient(90deg,#4c5c60,#b6c1bf 50%,#526064);
+  border:3px solid #849796;
+  border-radius:65px 65px 8px 8px;
+  box-shadow:15px 14px 25px #0005;
 }
-@media(max-width:580px){
-section{padding:65px 6%}
-.grid,.team{grid-template-columns:1fr}
-nav{gap:11px}
-nav a{font-size:12px}
-.brand{font-size:17px}
-.pipe{width:40%}
+.silo:before {
+  content:"";
+  position:absolute;
+  bottom:-46px;
+  left:10px;
+  width:119px;
+  height:46px;
+  background:#536368;
+  clip-path:polygon(0 0,100% 0,72% 100%,28% 100%);
 }
-@media(prefers-reduced-motion:reduce){
-*,*:before,*:after{animation:none!important;scroll-behavior:auto!important}
+.silo:after {
+  content:"STORAGE SILO";
+  position:absolute;
+  left:15px;
+  bottom:45px;
+  color:#1a282b;
+  font-weight:bold;
+  font-size:11px;
+  letter-spacing:1px;
+}
+.leg {
+  position:absolute;
+  bottom:42px;
+  width:8px;
+  height:44px;
+  background:#9eaaa9;
+}
+.leg.one {right:calc(13% + 24px)}
+.leg.two {right:calc(13% + 110px)}
+.dust {
+  position:absolute;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#ead5b6;
+  animation:ashFlow 3.5s linear infinite;
+  pointer-events:none;
+}
+@keyframes ashFlow {
+  0% {transform:translateX(0);opacity:0}
+  20% {opacity:1}
+  85% {opacity:1}
+  100% {transform:translateX(220px);opacity:0}
+}
+.stage-list {display:grid;gap:9px}
+.stage-button {
+  text-align:left;
+  border:1px solid #ffffff24;
+  background:#263437;
+  color:var(--white);
+  padding:15px;
+  border-radius:6px;
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+.stage-button span {color:var(--copper2);font-weight:bold}
+.stage-button.active {
+  border-color:var(--copper);
+  background:#44352f;
+}
+.stage-detail {
+  margin-top:17px;
+  padding:20px;
+  border-left:3px solid var(--copper);
+  background:#253235;
+  min-height:120px;
+}
+.client {text-align:center;font-size:24px;font-weight:900;letter-spacing:1px}
+.team-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+.member {
+  padding:0;
+  background:var(--panel);
+  border:1px solid var(--border);
+  color:white;
+  border-radius:10px;
+  overflow:hidden;
+  text-align:left;
+  transition:.2s;
+}
+.member:hover {transform:translateY(-4px);border-color:var(--copper)}
+.member-art {
+  height:130px;
+  background:linear-gradient(135deg,#36464a,#202c2f);
+  display:grid;
+  place-items:center;
+  color:#e1a184;
+  font-size:40px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+.member-body {padding:20px}
+.member-body small {color:var(--copper2)}
+.member-body h3 {margin:8px 0 2px}
+.member-body p {font-size:13px;margin:0 0 10px}
+.profile {
+  border:1px solid var(--copper);
+  background:#273538;
+  padding:25px;
+  border-radius:9px;
+  margin-top:20px;
+}
+.profile[hidden] {display:none}
+.quote-layout {
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:35px;
+}
+.quote-form {
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:30px;
+  border-radius:10px;
+}
+.form-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+.field {display:flex;flex-direction:column;gap:6px;margin-bottom:15px}
+.field label {font-size:13px;color:#e6e9e6}
+.field input,.field select,.field textarea {
+  width:100%;
+  background:#111c1f;
+  border:1px solid #637072;
+  border-radius:5px;
+  color:white;
+  padding:12px;
+  outline:none;
+}
+.field input:focus,.field select:focus,.field textarea:focus {
+  border-color:var(--copper2);
+}
+.field textarea {min-height:125px;resize:vertical}
+.form-status {margin-top:15px;color:#e3ad91;font-size:13px}
+.form-actions {display:flex;gap:10px;flex-wrap:wrap}
+.navigator {position:fixed;right:20px;bottom:20px;z-index:50}
+#navPanel {
+  display:none;
+  position:absolute;
+  bottom:75px;
+  right:0;
+  width:min(365px,90vw);
+  background:#192629;
+  border:1px solid var(--copper);
+  border-radius:12px;
+  padding:22px;
+  box-shadow:0 20px 55px #000b;
+}
+#navPanel.open {display:block}
+.console-top {
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:center;
+}
+.console-status {font-size:10px;color:#a9d2bb;letter-spacing:1px}
+.radar {
+  width:125px;
+  height:125px;
+  border:1px solid #c4785880;
+  border-radius:50%;
+  margin:20px auto;
+  overflow:hidden;
+  background:repeating-radial-gradient(circle,transparent 0 23px,#c4785833 24px 25px);
+  position:relative;
+}
+.radar:after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:conic-gradient(#c4785899,transparent 75deg,transparent 360deg);
+  animation:radarSpin 4s linear infinite;
+}
+@keyframes radarSpin {to{transform:rotate(360deg)}}
+.console-links {display:grid;gap:8px}
+.console-links a {
+  padding:12px;
+  background:#2c3c3f;
+  border:1px solid #ffffff16;
+  border-radius:5px;
+  font-size:13px;
+}
+.console-links a:hover {border-color:var(--copper)}
+footer {
+  padding:38px 7%;
+  background:#0b1113;
+  border-top:1px solid var(--border);
+}
+@media(max-width:980px) {
+  header {flex-direction:column}
+  nav {justify-content:center}
+  .process-layout,.quote-layout {grid-template-columns:1fr}
+  .team-grid,.grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px) {
+  section {padding:65px 6%}
+  .grid,.team-grid,.form-grid {grid-template-columns:1fr}
+  .stats {grid-template-columns:1fr 1fr}
+  nav {gap:10px}
+  nav a {font-size:11px}
+  .industrial-scene {height:340px}
+  .filter-unit {transform:scale(.75);transform-origin:bottom left}
+  .silo {transform:scale(.78);transform-origin:bottom right;right:5%}
+  .pipeline {width:30%}
+  .quote-form {padding:20px}
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*:before,*:after {animation:none!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
 <body>
 
 <header>
-<div class="brand">M<span>&</span>B BUSINESS SOLUTIONS</div>
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#flyash">Fly Ash</a>
-<a href="#clients">Clients</a>
-<a href="#team">Our Team</a>
-<a href="#contact">Contact</a>
-</nav>
+  <a class="brand" href="#home" aria-label="M&B Business Solutions home">
+    <div id="brandFallback" class="brand-symbol">M&B</div>
+    <img id="officialLogo" class="brand-image" src="mnb-logo.png" alt="M&B Business Solutions logo">
+    <div id="brandText" class="brand-name">
+      M&B BUSINESS SOLUTIONS
+      <small>MINING & INDUSTRIAL SOLUTIONS</small>
+    </div>
+  </a>
+  <nav aria-label="Main navigation">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#flyash">Fly Ash</a>
+    <a href="#clients">Clients</a>
+    <a href="#team">Leadership</a>
+    <a href="#contact">Get a Quote</a>
+  </nav>
 </header>
 
 <main>
 <section class="hero" id="home">
-<div class="eyebrow">MINING & INDUSTRIAL SOLUTIONS</div>
-<h1>RELIABLE SUPPLY.<br><span class="accent">STRONGER MINING.</span></h1>
-<p>Supporting mining and industrial operations through fly ash supply, coordinated services and dependable business relationships.</p>
-<div><a class="btn" href="#services">Explore Our Services</a></div>
+  <div class="hero-content">
+    <div class="eyebrow">M&B BUSINESS SOLUTIONS / SOUTH AFRICA</div>
+    <h1>RELIABLE SUPPLY.<br><span>STRONGER MINING.</span></h1>
+    <p>Industrial material supply solutions built around operational coordination, dependable relationships and the needs of mining businesses.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#services">Explore Our Capabilities</a>
+      <a class="btn btn-outline" href="#contact">Request a Quotation</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>MINING</strong><small>Industry Focus</small></div>
+      <div class="stat"><strong>FLY ASH</strong><small>Material Supply</small></div>
+      <div class="stat"><strong>COORDINATION</strong><small>Operational Support</small></div>
+    </div>
+  </div>
 </section>
 
 <section id="about">
-<div class="eyebrow">ABOUT M&B</div>
-<h2>Built for industrial demands.</h2>
-<p>M&B Business Solutions supports mining and industrial operations with material supply services and professional coordination.</p>
+  <div class="wrap">
+    <div class="eyebrow">WHO WE ARE</div>
+    <h2>Focused on industrial performance.</h2>
+    <p>M&B Business Solutions supports mining and industrial operations through material supply services and professional coordination. Our focus is on understanding operational requirements and supporting reliable service delivery.</p>
+  </div>
 </section>
 
-<section id="services">
-<div class="eyebrow">OUR CAPABILITIES</div>
-<h2>What We Do</h2>
-<div class="grid">
-<div class="card"><h3>Fly Ash Supply</h3><p>Fly ash supply solutions for suitable mining and industrial applications.</p></div>
-<div class="card"><h3>Mining Solutions</h3><p>Supporting mining operations through industrial material supply services.</p></div>
-<div class="card"><h3>Logistics Coordination</h3><p>Coordinating material deliveries through transport service providers.</p></div>
-</div>
+<section class="alt" id="services">
+  <div class="wrap">
+    <div class="eyebrow">OUR CAPABILITIES</div>
+    <h2>Solutions for industrial operations.</h2>
+    <div class="grid">
+      <article class="panel">
+        <div class="service-icon">01 /</div>
+        <h3>Fly Ash Supply</h3>
+        <p>Material supply solutions for suitable mining and industrial applications.</p>
+      </article>
+      <article class="panel">
+        <div class="service-icon">02 /</div>
+        <h3>Mining Solutions</h3>
+        <p>Supporting industrial requirements through coordinated material supply services.</p>
+      </article>
+      <article class="panel">
+        <div class="service-icon">03 /</div>
+        <h3>Logistics Coordination</h3>
+        <p>Supporting material delivery planning and communication with transport service providers.</p>
+      </article>
+    </div>
+  </div>
 </section>
 
 <section id="flyash">
-<div class="eyebrow">INDUSTRIAL EXPLORER</div>
-<h2>The Journey of Fly Ash</h2>
-<p>Discover how fly ash is generated, captured and used in industry. This visualisation explains a general industrial process, not M&B's private operations.</p>
-<div class="scene" aria-label="Animated industrial fly ash filtration and storage illustration">
-<div class="ground"></div>
-<div class="filter"></div>
-<div class="pipe"></div>
-<div class="silo"></div>
-<div id="particles"></div>
-</div>
-<div class="stages" id="stages"></div>
-<p id="stageInfo" aria-live="polite"></p>
+  <div class="wrap">
+    <div class="eyebrow">INTERACTIVE INDUSTRIAL EXPLORER</div>
+    <h2>Understanding the Journey of Fly Ash</h2>
+    <p>Explore a general industrial process, from the formation of fly ash through collection and storage to suitable applications.</p>
+    <div class="process-layout">
+      <div class="industrial-scene" aria-label="Animated industrial filtration and storage equipment">
+        <div class="scene-label">INDUSTRIAL PROCESS / CONCEPT VISUALISATION</div>
+        <div class="scene-ground"></div>
+        <div class="filter-unit"></div>
+        <div class="pipeline"></div>
+        <div class="silo"></div>
+        <div class="leg one"></div>
+        <div class="leg two"></div>
+        <div id="ashParticles"></div>
+      </div>
+      <div>
+        <div class="eyebrow">SELECT PROCESS STAGE</div>
+        <div id="stageButtons" class="stage-list"></div>
+        <div class="stage-detail">
+          <h3 id="stageTitle">Process Overview</h3>
+          <p id="stageDescription"></p>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:12px;margin-top:15px">Educational illustration only. It does not represent M&B's proprietary supply chain or owned production facilities.</p>
+  </div>
 </section>
 
-<section id="clients">
-<div class="eyebrow">OUR CLIENTS</div>
-<h2>Industry Relationships</h2>
-<div class="grid">
-<div class="card client">ROSOND</div>
-<div class="card client">VALTERRA</div>
-<div class="card client">AFRIMAT</div>
-</div>
+<section class="alt" id="clients">
+  <div class="wrap">
+    <div class="eyebrow">INDUSTRY RELATIONSHIPS</div>
+    <h2>Client Showcase</h2>
+    <p>Client names shown for management review and subject to approval for public display.</p>
+    <div class="grid">
+      <div class="panel client">ROSOND</div>
+      <div class="panel client">VALTERRA</div>
+      <div class="panel client">AFRIMAT</div>
+    </div>
+  </div>
 </section>
 
 <section id="team">
-<div class="eyebrow">THE PEOPLE BEHIND M&B</div>
-<h2>Leadership & Operations Team</h2>
-<p>Meet the team supporting M&B Business Solutions. Select a profile to view more information.</p>
-<div class="team" id="teamGrid"></div>
-<div class="profile" id="profile" hidden aria-live="polite">
-<h3 id="profileName"></h3>
-<p id="profileRole"></p>
-<p id="profileBio"></p>
-<button class="btn" id="closeProfile">Close Profile</button>
-</div>
+  <div class="wrap">
+    <div class="eyebrow">THE PEOPLE BEHIND M&B</div>
+    <h2>Leadership & Operations Team</h2>
+    <p>Explore the team profiles. Professional biographies and photographs will be added following approval.</p>
+    <div class="team-grid" id="teamGrid"></div>
+    <div id="teamProfile" class="profile" hidden aria-live="polite">
+      <div class="eyebrow">TEAM PROFILE</div>
+      <h3 id="profileName"></h3>
+      <p id="profileRole"></p>
+      <p id="profileBio"></p>
+      <button class="btn btn-outline" id="closeProfile">Close Profile</button>
+    </div>
+  </div>
 </section>
 
-<section id="contact">
-<div class="eyebrow">GET IN TOUCH</div>
-<h2>Let's discuss your requirements.</h2>
-<p>For mining supply enquiries and quotations, contact M&B Business Solutions.</p>
-<p>Official contact details will be added after management approval.</p>
+<section class="alt" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">BUSINESS ENQUIRIES</div>
+    <h2>Request a Quotation</h2>
+    <div class="quote-layout">
+      <div>
+        <h3>Tell us what your operation requires.</h3>
+        <p>Use this form to prepare a structured enquiry for M&B Business Solutions.</p>
+        <p>The management preview does not send or store submissions. Until an official company email address is configured, you can copy your enquiry summary.</p>
+        <div class="panel">
+          <div class="eyebrow">CONTACT INFORMATION</div>
+          <h3>Official contact details</h3>
+          <p>Company email: To be confirmed</p>
+          <p>Telephone: To be confirmed</p>
+          <p>Office address: To be confirmed</p>
+        </div>
+      </div>
+      <form class="quote-form" id="quoteForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="company">Company name *</label>
+            <input id="company" name="company" required>
+          </div>
+          <div class="field">
+            <label for="person">Contact person *</label>
+            <input id="person" name="person" required>
+          </div>
+          <div class="field">
+            <label for="email">Business email *</label>
+            <input id="email" name="email" type="email" required>
+          </div>
+          <div class="field">
+            <label for="phone">Contact number</label>
+            <input id="phone" name="phone" type="tel">
+          </div>
+          <div class="field">
+            <label for="service">Service required *</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option>Fly Ash Supply</option>
+              <option>Mining Solutions</option>
+              <option>Logistics Coordination</option>
+              <option>General Business Enquiry</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="quantity">Estimated quantity (tonnes)</label>
+            <input id="quantity" name="quantity" type="number" min="0" step="any" placeholder="If applicable">
+          </div>
+        </div>
+        <div class="field">
+          <label for="location">Delivery / project location</label>
+          <input id="location" name="location">
+        </div>
+        <div class="field">
+          <label for="requirements">Project requirements *</label>
+          <textarea id="requirements" name="requirements" required placeholder="Describe the material, application, timeline and other requirements."></textarea>
+        </div>
+        <div class="form-actions">
+          <button class="btn" type="submit">Prepare Enquiry</button>
+          <button class="btn btn-outline" type="button" id="copyEnquiry">Copy Enquiry</button>
+        </div>
+        <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
 </section>
 </main>
 
 <footer>
-<strong>M&B BUSINESS SOLUTIONS</strong>
-<p>Concept preview for management review. Not an official public launch.</p>
+  <div class="wrap">
+    <strong>M&B BUSINESS SOLUTIONS</strong>
+    <p>Mining & Industrial Solutions</p>
+    <p style="font-size:12px">Concept preview for management review. Not an official public launch.</p>
+    <small class="muted">© <span id="year"></span> M&B Business Solutions</small>
+  </div>
 </footer>
 
 <div class="navigator">
-<div id="navPanel" aria-label="Mining Navigator">
-<div class="eyebrow">M&B OPERATIONS CONSOLE</div>
-<h3>Mining Navigator</h3>
-<div class="radar" aria-hidden="true"></div>
-<p>Where would you like to explore?</p>
-<div class="navlinks">
-<a href="#about">Company Overview</a>
-<a href="#services">Our Services</a>
-<a href="#flyash">Fly Ash Explorer</a>
-<a href="#clients">Industry Clients</a>
-<a href="#team">Leadership Team</a>
-<a href="#contact">Contact M&B</a>
-</div>
-</div>
-<button class="btn" id="navToggle" aria-expanded="false" aria-controls="navPanel">⚙ Mining Navigator</button>
+  <div id="navPanel" aria-label="Mining Navigator">
+    <div class="console-top">
+      <span class="eyebrow">M&B CONTROL CONSOLE</span>
+      <span class="console-status">● NAVIGATION READY</span>
+    </div>
+    <h3 style="margin-top:15px">Mining Navigator 2.0</h3>
+    <div class="radar" aria-hidden="true"></div>
+    <p style="font-size:13px">Choose a section to explore.</p>
+    <div class="console-links">
+      <a href="#about">01 / Company Overview</a>
+      <a href="#services">02 / Industrial Services</a>
+      <a href="#flyash">03 / Fly Ash Explorer</a>
+      <a href="#clients">04 / Client Showcase</a>
+      <a href="#team">05 / Leadership Team</a>
+      <a href="#contact">06 / Quotation Enquiry</a>
+    </div>
+  </div>
+  <button class="btn" id="navToggle" aria-expanded="false" aria-controls="navPanel">⚙ Mining Navigator</button>
 </div>
 
 <script>
-const stages=[
-["Generation","Fly ash forms during coal combustion in power stations."],
-["Capture","Fine particles are separated from flue gases by collection equipment."],
-["Storage","Collected fly ash can be transferred into enclosed storage silos."],
-["Quality","Material properties are assessed for their intended industrial application."],
-["Application","Suitable fly ash can support approved mining and construction applications."]
-];
-const stageBox=document.getElementById("stages");
-const stageInfo=document.getElementById("stageInfo");
-stages.forEach((stage,i)=>{
-const b=document.createElement("button");
-b.textContent=(i+1)+" · "+stage[0];
-b.onclick=()=>{
-document.querySelectorAll(".stages button").forEach(x=>x.classList.remove("active"));
-b.classList.add("active");
-stageInfo.textContent=stage[1];
+// OFFICIAL LOGO
+// Upload an approved transparent image as mnb-logo.png
+// to the same GitHub folder as index.html.
+const officialLogo=document.getElementById("officialLogo");
+officialLogo.onload=()=>{
+  officialLogo.style.display="block";
+  document.getElementById("brandFallback").style.display="none";
+  document.getElementById("brandText").style.display="none";
 };
-stageBox.appendChild(b);
-});
-stageBox.firstElementChild.click();
 
-const particles=document.getElementById("particles");
-for(let i=0;i<35;i++){
-const p=document.createElement("span");
-p.className="dust";
-p.style.left=(8+Math.random()*30)+"%";
-p.style.top=(100+Math.random()*30)+"px";
-p.style.animationDelay=(-Math.random()*5)+"s";
-p.style.animationDuration=(2+Math.random()*4)+"s";
-particles.appendChild(p);
+// FLY ASH PROCESS
+const stages=[
+  {
+    title:"Generation",
+    description:"Fly ash is formed during coal combustion in power generation facilities."
+  },
+  {
+    title:"Collection",
+    description:"Industrial collection equipment separates fine particles from flue gases."
+  },
+  {
+    title:"Storage",
+    description:"Collected fly ash can be transferred to enclosed storage silos for handling."
+  },
+  {
+    title:"Quality Assessment",
+    description:"Material properties are evaluated to determine suitability for particular applications."
+  },
+  {
+    title:"Industrial Application",
+    description:"Suitable fly ash may be used in approved mining, cementitious and construction applications."
+  }
+];
+const stageButtons=document.getElementById("stageButtons");
+function setStage(index){
+  const stage=stages[index];
+  document.getElementById("stageTitle").textContent=stage.title;
+  document.getElementById("stageDescription").textContent=stage.description;
+  document.querySelectorAll(".stage-button").forEach((button,i)=>{
+    button.classList.toggle("active",i===index);
+    button.setAttribute("aria-pressed",String(i===index));
+  });
+}
+stages.forEach((stage,i)=>{
+  const button=document.createElement("button");
+  button.className="stage-button";
+  button.type="button";
+  const number=document.createElement("span");
+  number.textContent=String(i+1).padStart(2,"0");
+  const label=document.createElement("strong");
+  label.textContent=stage.title;
+  button.append(number,label);
+  button.addEventListener("click",()=>setStage(i));
+  stageButtons.appendChild(button);
+});
+setStage(0);
+
+const ashParticles=document.getElementById("ashParticles");
+for(let i=0;i<32;i++){
+  const particle=document.createElement("span");
+  particle.className="dust";
+  particle.style.left=(20+Math.random()*22)+"%";
+  particle.style.bottom=(199+Math.random()*10)+"px";
+  particle.style.animationDelay=(-Math.random()*5)+"s";
+  particle.style.animationDuration=(2.5+Math.random()*2)+"s";
+  ashParticles.appendChild(particle);
 }
 
+// LEADERSHIP & OPERATIONS
 const team=[
-{name:"Merafe Tisane",role:"Managing Director",bio:"Managing Director"},
-{name:"Thulane Kota",role:"Technical Director",bio:"Professional biography to be added."},
-{name:"Thabang Selamolela",role:"Second Managing Director",bio:"Professional biography to be added."},
-{name:"Buang Tisane",role:"Logistics Coordinator",bio:"Professional biography to be added."},
-{name:"Thando Mtshali",role:"Project Coordinator",bio:"Professional biography to be added."}
+  {name:"Merafe Tisane",role:"Managing Director",bio:"Managing Director"},
+  {name:"Thulane Kota",role:"Technical Director",bio:"Professional biography to be added."},
+  {name:"Thabang Selamolela",role:"Second Managing Director",bio:"Professional biography to be added."},
+  {name:"Buang Tisane",role:"Logistics Coordinator",bio:"Professional biography to be added."},
+  {name:"Thando Mtshali",role:"Project Coordinator",bio:"Professional biography to be added."}
 ];
-const grid=document.getElementById("teamGrid");
-const profile=document.getElementById("profile");
-team.forEach((person,i)=>{
-const card=document.createElement("button");
-card.className="member";
-const avatar=document.createElement("div");
-avatar.className="avatar";
-avatar.textContent="◉";
-const info=document.createElement("div");
-info.className="member-info";
-const number=document.createElement("small");
-number.textContent="TEAM PROFILE 0"+(i+1);
-const name=document.createElement("h3");
-name.textContent=person.name;
-const role=document.createElement("p");
-role.textContent=person.role;
-const hint=document.createElement("small");
-hint.textContent="View Profile →";
-info.append(number,name,role,hint);
-card.append(avatar,info);
-card.onclick=()=>{
-document.getElementById("profileName").textContent=person.name;
-document.getElementById("profileRole").textContent=person.role;
-document.getElementById("profileBio").textContent=person.bio;
-profile.hidden=false;
-profile.scrollIntoView({behavior:"smooth",block:"nearest"});
-};
-grid.appendChild(card);
-});
-document.getElementById("closeProfile").onclick=()=>profile.hidden=true;
+const teamGrid=document.getElementById("teamGrid");
+const teamProfile=document.getElementById("teamProfile");
 
-const toggle=document.getElementById("navToggle");
-const panel=document.getElementById("navPanel");
-toggle.onclick=()=>{
-const open=panel.classList.toggle("open");
-toggle.setAttribute("aria-expanded",String(open));
-};
-document.querySelectorAll(".navlinks a").forEach(a=>{
-a.onclick=()=>{
-panel.classList.remove("open");
-toggle.setAttribute("aria-expanded","false");
-};
+team.forEach((person,i)=>{
+  const card=document.createElement("button");
+  card.className="member";
+  card.type="button";
+  const art=document.createElement("div");
+  art.className="member-art";
+  art.textContent=person.name.split(" ").map(s=>s[0]).join("");
+  const body=document.createElement("div");
+  body.className="member-body";
+  const number=document.createElement("small");
+  number.textContent="PROFILE "+String(i+1).padStart(2,"0");
+  const name=document.createElement("h3");
+  name.textContent=person.name;
+  const role=document.createElement("p");
+  role.textContent=person.role;
+  const hint=document.createElement("small");
+  hint.textContent="View Profile →";
+  body.append(number,name,role,hint);
+  card.append(art,body);
+  card.addEventListener("click",()=>{
+    document.getElementById("profileName").textContent=person.name;
+    document.getElementById("profileRole").textContent=person.role;
+    document.getElementById("profileBio").textContent=person.bio;
+    teamProfile.hidden=false;
+    teamProfile.scrollIntoView({behavior:"smooth",block:"nearest"});
+  });
+  teamGrid.appendChild(card);
 });
+document.getElementById("closeProfile").addEventListener("click",()=>{
+  teamProfile.hidden=true;
+});
+
+// QUOTATION ENQUIRY
+// Add M&B's approved official address here when available.
+// Leaving it blank keeps the website in preview mode.
+const COMPANY_EMAIL="";
+
+const quoteForm=document.getElementById("quoteForm");
+const formStatus=document.getElementById("formStatus");
+
+function getEnquiry(){
+  const data=new FormData(quoteForm);
+  return [
+    "M&B BUSINESS SOLUTIONS - QUOTATION ENQUIRY",
+    "",
+    "Company: "+(data.get("company")||""),
+    "Contact: "+(data.get("person")||""),
+    "Email: "+(data.get("email")||""),
+    "Phone: "+(data.get("phone")||""),
+    "Service: "+(data.get("service")||""),
+    "Estimated quantity (tonnes): "+(data.get("quantity")||"Not specified"),
+    "Project location: "+(data.get("location")||"Not specified"),
+    "",
+    "Requirements:",
+    data.get("requirements")||""
+  ].join("\n");
+}
+
+quoteForm.addEventListener("submit",event=>{
+  event.preventDefault();
+  if(!quoteForm.reportValidity())return;
+  const message=getEnquiry();
+  if(COMPANY_EMAIL){
+    const subject=encodeURIComponent("M&B Quotation Enquiry");
+    const body=encodeURIComponent(message);
+    window.location.href="mailto:"+COMPANY_EMAIL+"?subject="+subject+"&body="+body;
+    formStatus.textContent="Your email application should open with a prepared enquiry. Please review and send it there.";
+  }else{
+    formStatus.textContent="Enquiry prepared. The official company email is not yet configured. Select Copy Enquiry to save the details.";
+  }
+});
+
+document.getElementById("copyEnquiry").addEventListener("click",async()=>{
+  if(!quoteForm.reportValidity())return;
+  try{
+    await navigator.clipboard.writeText(getEnquiry());
+    formStatus.textContent="Enquiry copied. Paste it into your email application.";
+  }catch(error){
+    formStatus.textContent="Automatic copying is unavailable. Please use a supported browser or copy the form details manually.";
+  }
+});
+
+// MINING NAVIGATOR
+const navToggle=document.getElementById("navToggle");
+const navPanel=document.getElementById("navPanel");
+function closeNavigator(){
+  navPanel.classList.remove("open");
+  navToggle.setAttribute("aria-expanded","false");
+}
+navToggle.addEventListener("click",()=>{
+  const isOpen=navPanel.classList.toggle("open");
+  navToggle.setAttribute("aria-expanded",String(isOpen));
+});
+document.querySelectorAll(".console-links a").forEach(link=>{
+  link.addEventListener("click",closeNavigator);
+});
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape")closeNavigator();
+});
+document.addEventListener("click",event=>{
+  if(!event.target.closest(".navigator"))closeNavigator();
+});
+
+document.getElementById("year").textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
